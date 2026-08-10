@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="WebGIS Digital Desa Hegarmanah">
+
+    <title>
+        WebGIS Desa Hegarmanah
+    </title>
+
+    <!-- =====================================================
+         LEAFLET CSS
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <!-- =====================================================
+         FONT
+    ====================================================== -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         ICON
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     LOADING SCREEN
+========================================================== -->
+
+<div id="loading-screen">
+
+    <div class="loading-card">
+
+        <div class="loading-icon">
+            <i class="fa-solid fa-map-location-dot"></i>
+        </div>
+
+        <h2>
+            WebGIS Desa
+        </h2>
+
+        <p id="loading-text">
+            Menyiapkan peta interaktif...
+        </p>
+
+        <div class="loading-bar">
+
+            <div id="loading-progress"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+
+            <i class="fa-solid fa-map"></i>
+
+        </div>
+
+        <div>
+
+            <h1>
+                Peta Digital Desa Hegarmanah
+            </h1>
+
+            <p>
+                Kecamatan Bojongpicung · Kabupaten Cianjur
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="header-actions">
+
+        <button
+            id="location-button"
+            class="icon-button"
+            title="Lokasi saya"
+        >
+
+            <i class="fa-solid fa-location-crosshairs"></i>
+
+        </button>
+
+
+        <button
+            id="fullscreen-button"
+            class="icon-button"
+            title="Fullscreen"
+        >
+
+            <i class="fa-solid fa-expand"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN APPLICATION
+========================================================== -->
+
+<main class="app">
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================== -->
+
+<aside
+    id="sidebar"
+    class="sidebar"
+>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="search-input"
+            placeholder="Cari lokasi, UMKM, fasilitas..."
+        >
+
+        <button id="search-button">
+            Cari
+        </button>
+
+    </div>
+
+
+    <!-- SEARCH RESULT -->
+
+    <div
+        id="search-results"
+        class="search-results"
+    ></div>
+
+
+
+    <!-- =====================================================
+         LAYER PANEL
+    ====================================================== -->
+
+    <section class="panel">
+
+        <div class="panel-title">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            <span>
+                Layer Peta
+            </span>
+
+        </div>
+
+
+        <!-- BASEMAP -->
+
+        <div class="layer-item">
+
+            <div class="layer-left">
+
+                <input
+                    type="checkbox"
+                    id="base-layer"
+                    checked
+                >
+
+                <label for="base-layer">
+                    Basemap
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- ADMINISTRASI -->
+
+        <div class="layer-item">
+
+            <div class="layer-left">
+
+                <input
+                    type="checkbox"
+                    id="administrasi-layer"
+                >
+
+                <label for="administrasi-layer">
+                    Administrasi
+                </label>
+
+            </div>
+
+            <span
+                id="administrasi-status"
+                class="layer-status"
+            >
+                Memuat...
+            </span>
+
+        </div>
+
+
+        <!-- JALAN -->
+
+        <div class="layer-item">
+
+            <div class="layer-left">
+
+                <input
+                    type="checkbox"
+                    id="jalan-layer"
+                >
+
+                <label for="jalan-layer">
+                    Jalan
+                </label>
+
+            </div>
+
+            <span
+                id="jalan-status"
+                class="layer-status"
+            >
+                Memuat...
+            </span>
+
+        </div>
+
+
+        <!-- SUNGAI -->
+
+        <div class="layer-item">
+
+            <div class="layer-left">
+
+                <input
+                    type="checkbox"
+                    id="sungai-layer"
+                >
+
+                <label for="sungai-layer">
+                    Sungai
+                </label>
+
+            </div>
+
+            <span
+                id="sungai-status"
+                class="layer-status"
+            >
+                Memuat...
+            </span>
+
+        </div>
+
+
+        <!-- BANGUNAN -->
+
+        <div class="layer-item">
+
+            <div class="layer-left">
+
+                <input
+                    type="checkbox"
+                    id="bangunan-layer"
+                >
+
+                <label for="bangunan-layer">
+                    Bangunan
+                </label>
+
+            </div>
+
+            <span
+                id="bangunan-status"
+                class="layer-status"
+            >
+                Memuat...
+            </span>
+
+        </div>
+
+
+        <!-- UMKM -->
+
+        <div class="layer-item">
+
+            <div class="layer-left">
+
+                <input
+                    type="checkbox"
+                    id="umkm-layer"
+                >
+
+                <label for="umkm-layer">
+                    UMKM
+                </label>
+
+            </div>
+
+            <span
+                id="umkm-status"
+                class="layer-status"
+            >
+                Memuat...
+            </span>
+
+        </div>
+
+
+        <!-- WISATA -->
+
+        <div class="layer-item">
+
+            <div class="layer-left">
+
+                <input
+                    type="checkbox"
+                    id="wisata-layer"
+                >
+
+                <label for="wisata-layer">
+                    Wisata
+                </label>
+
+            </div>
+
+            <span
+                id="wisata-status"
+                class="layer-status"
+            >
+                Memuat...
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         OPACITY
+    ====================================================== -->
+
+    <section class="panel">
+
+        <div class="panel-title">
+
+            <i class="fa-solid fa-sliders"></i>
+
+            <span>
+                Transparansi Layer
+            </span>
+
+        </div>
+
+
+        <label class="opacity-label">
+
+            Administrasi
+
+            <span id="opacity-value">
+                100%
+            </span>
+
+        </label>
+
+
+        <input
+            type="range"
+            id="opacity-slider"
+            min="0"
+            max="100"
+            value="100"
+        >
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WEATHER
+    ====================================================== -->
+
+    <section class="panel weather-panel">
+
+        <div class="panel-title">
+
+            <i class="fa-solid fa-cloud-sun"></i>
+
+            <span>
+                Cuaca
+            </span>
+
+        </div>
+
+
+        <div class="weather-loading">
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            Mengambil data cuaca...
+
+        </div>
+
+
+        <div
+            id="weather-content"
+            class="weather-content"
+        >
+
+            <div class="weather-main">
+
+                <div
+                    id="weather-icon"
+                    class="weather-icon"
+                >
+                    🌤️
+                </div>
+
+                <div>
+
+                    <strong id="weather-temperature">
+                        --
+                    </strong>
+
+                    <span>
+                        °C
+                    </span>
+
+                    <p id="weather-description">
+                        --
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="weather-details">
+
+                <div>
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                    <span>
+                        <b id="weather-humidity">
+                            --
+                        </b>
+                        %
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-wind"></i>
+
+                    <span>
+                        <b id="weather-wind">
+                            --
+                        </b>
+                        km/j
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TOOLS
+    ====================================================== -->
+
+    <section class="panel">
+
+        <div class="panel-title">
+
+            <i class="fa-solid fa-toolbox"></i>
+
+            <span>
+                Fitur WebGIS
+            </span>
+
+        </div>
+
+
+        <div class="tool-grid">
+
+            <button
+                id="measure-distance"
+                class="tool-button"
+            >
+
+                <i class="fa-solid fa-ruler"></i>
+
+                Jarak
+
+            </button>
+
+
+            <button
+                id="measure-area"
+                class="tool-button"
+            >
+
+                <i class="fa-solid fa-draw-polygon"></i>
+
+                Luas
+
+            </button>
+
+
+            <button
+                id="clear-measure"
+                class="tool-button"
+            >
+
+                <i class="fa-solid fa-eraser"></i>
+
+                Hapus
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SYSTEM STATUS
+    ====================================================== -->
+
+    <section class="panel system-panel">
+
+        <div class="panel-title">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <span>
+                Status Sistem
+            </span>
+
+        </div>
+
+
+        <div class="system-status">
+
+            <span
+                id="system-indicator"
+                class="status-dot"
+            ></span>
+
+            <span id="system-text">
+                Menyiapkan WebGIS...
+            </span>
+
+        </div>
+
+    </section>
+
+
+</aside>
+
+
+
+<!-- =========================================================
+     MAP
+========================================================== -->
+
+<section class="map-container">
+
+    <div id="map"></div>
+
+
+    <!-- MAP CONTROLS -->
+
+    <div class="map-controls">
+
+        <button
+            id="zoom-in"
+            title="Zoom in"
+        >
+            <i class="fa-solid fa-plus"></i>
+        </button>
+
+        <button
+            id="zoom-out"
+            title="Zoom out"
+        >
+            <i class="fa-solid fa-minus"></i>
+        </button>
+
+        <button
+            id="reset-map"
+            title="Kembali ke Desa Hegarmanah"
+        >
+            <i class="fa-solid fa-house"></i>
+        </button>
+
+    </div>
+
+
+    <!-- COORDINATE -->
+
+    <div
+        id="coordinate-display"
+        class="coordinate-display"
+    >
+        Lat: -- | Lng: --
+    </div>
+
+
+    <!-- MAP LEGEND -->
+
+    <div class="map-legend">
+
+        <strong>
+            Legenda
+        </strong>
+
+        <div>
+            <span class="legend-line road"></span>
+            Jalan
+        </div>
+
+        <div>
+            <span class="legend-line river"></span>
+            Sungai
+        </div>
+
+        <div>
+            <span class="legend-point umkm"></span>
+            UMKM
+        </div>
+
+        <div>
+            <span class="legend-point wisata"></span>
+            Wisata
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     LEAFLET JS
+========================================================== -->
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+
+<!-- =========================================================
+     APPLICATION JS
+========================================================== -->
+
+<script
+    src="script.js">
+</script>
+
+
+</body>
+
+</html>
