@@ -1,1048 +1,209 @@
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-html,
-body {
-    width: 100%;
-    height: 100%;
-    font-family: "Inter", sans-serif;
-    overflow: hidden;
-    color: #172033;
-    background: #f4f7fb;
+html{
+    font-size: 62.5%; /* 1rem = 10px */
 }
 
-
-/* =========================================================
-   LOADING
-========================================================= */
-
-#loading-screen {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 99999;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #f7f9fc;
-
-    transition:
-        opacity .5s ease,
-        visibility .5s ease;
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777;
+    
 }
 
-
-#loading-screen.hidden {
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-}
-
-
-.loading-card {
-
-    width: min(360px, 90vw);
-
-    padding: 35px;
-
+.main-title{
     text-align: center;
-
-    background: white;
-
-    border-radius: 24px;
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.12);
+    margin-top: 4rem;
+    margin-bottom: 8rem;
+    text-shadow: 
+    1px 0px 1px #ccc, 0px 1px 1px #eee, 
+    2px 1px 1px #ccc, 1px 2px 1px #eee,
+    3px 2px 1px #ccc, 2px 3px 1px #eee,
+    4px 3px 1px #ccc, 3px 4px 1px #eee,
+    5px 4px 1px #ccc, 4px 5px 1px #eee,
+    6px 5px 1px #ccc, 5px 6px 1px #eee,
+    7px 6px 1px #ccc;
 }
 
-
-.loading-icon {
-
-    width: 65px;
-
-    height: 65px;
-
-    margin: auto auto 18px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 18px;
-
-    background: #0ea5e9;
-
-    color: white;
-
-    font-size: 28px;
-}
-
-
-.loading-card h2 {
-
-    margin-bottom: 8px;
-
-    font-size: 22px;
-}
-
-
-.loading-card p {
-
-    color: #718096;
-
-    font-size: 13px;
-
-    margin-bottom: 20px;
-}
-
-
-.loading-bar {
-
-    height: 5px;
-
-    background: #e8edf3;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-}
-
-
-#loading-progress {
-
-    width: 10%;
-
-    height: 100%;
-
-    background: #0ea5e9;
-
-    border-radius: 20px;
-
-    transition: width .4s ease;
-}
-
-
-/* =========================================================
-   TOPBAR
-========================================================= */
-
-.topbar {
-
-    position: relative;
-
-    z-index: 1000;
-
-    height: 74px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 0 22px;
-
-    background: rgba(255,255,255,.94);
-
-    backdrop-filter: blur(15px);
-
-    border-bottom: 1px solid #e7ebf1;
-}
-
-
-.brand {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-}
-
-
-.brand-icon {
-
-    width: 43px;
-
-    height: 43px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 13px;
-
-    background: #0ea5e9;
-
-    color: white;
-
-    font-size: 19px;
-}
-
-
-.brand h1 {
-
-    font-size: 16px;
-
+.main-title h1{
+    font-size: 7rem;
+    text-transform: uppercase;
     font-weight: 800;
+    color: #555;
 }
 
-
-.brand p {
-
-    margin-top: 3px;
-
-    color: #7a8494;
-
-    font-size: 11px;
+.main-title h2{
+    font-size: 4rem;
+    font-weight: 300;
+    text-transform: uppercase;
 }
 
-
-.header-actions {
-
-    display: flex;
-
-    gap: 8px;
+.svg-img{
+   display: block;
+   margin: auto;
 }
 
-
-.icon-button {
-
-    width: 39px;
-
-    height: 39px;
-
-    border: 1px solid #e1e6ed;
-
-    background: white;
-
-    border-radius: 11px;
-
-    cursor: pointer;
-
-    color: #475569;
-
-    transition: .2s;
-}
-
-
-.icon-button:hover {
-
-    background: #f1f7fb;
-
-    color: #0284c7;
-}
-
-
-/* =========================================================
-   APP
-========================================================= */
-
-.app {
-
-    height: calc(100vh - 74px);
-
-    display: flex;
-}
-
-
-/* =========================================================
-   SIDEBAR
-========================================================= */
-
-.sidebar {
-
-    width: 350px;
-
-    flex-shrink: 0;
-
-    overflow-y: auto;
-
-    background: #f8fafc;
-
-    border-right: 1px solid #e4e8ee;
-
-    padding: 15px;
-}
-
-
-.sidebar::-webkit-scrollbar {
-
-    width: 5px;
-}
-
-
-.sidebar::-webkit-scrollbar-thumb {
-
-    background: #cbd5e1;
-
-    border-radius: 10px;
-}
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-.search-box {
-
-    display: flex;
-
-    align-items: center;
-
-    height: 48px;
-
-    margin-bottom: 10px;
-
-    background: white;
-
-    border: 1px solid #e1e7ef;
-
-    border-radius: 13px;
-
-    overflow: hidden;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,.03);
-}
-
-
-.search-box i {
-
-    padding-left: 14px;
-
-    color: #94a3b8;
-}
-
-
-.search-box input {
-
-    flex: 1;
-
-    height: 100%;
-
-    padding: 0 10px;
-
-    border: none;
-
-    outline: none;
-
-    font-size: 13px;
-}
-
-
-.search-box button {
-
-    height: 100%;
-
-    padding: 0 17px;
-
-    border: none;
-
-    background: #0ea5e9;
-
-    color: white;
-
-    cursor: pointer;
-
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   SEARCH RESULTS
-========================================================= */
-
-.search-results {
-
-    display: none;
-
-    background: white;
-
-    border-radius: 12px;
-
-    margin-bottom: 10px;
-
-    border: 1px solid #e5e9ef;
-
-    overflow: hidden;
-}
-
-
-.search-result {
-
-    padding: 12px;
-
-    border-bottom: 1px solid #edf0f4;
-
-    cursor: pointer;
-
-    font-size: 13px;
-}
-
-
-.search-result:hover {
-
-    background: #f5faff;
-}
-
-
-/* =========================================================
-   PANEL
-========================================================= */
-
-.panel {
-
-    padding: 15px;
-
-    margin-bottom: 12px;
-
-    background: white;
-
-    border: 1px solid #e4e9ef;
-
-    border-radius: 15px;
-
-    box-shadow:
-        0 5px 15px rgba(15,23,42,.035);
-}
-
-
-.panel-title {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 9px;
-
-    margin-bottom: 14px;
-
-    font-size: 13px;
-
-    font-weight: 700;
-}
-
-
-.panel-title i {
-
-    color: #0ea5e9;
-}
-
-
-/* =========================================================
-   LAYER
-========================================================= */
-
-.layer-item {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    min-height: 38px;
-
-    border-bottom: 1px solid #f0f2f5;
-}
-
-
-.layer-item:last-child {
-
-    border-bottom: none;
-}
-
-
-.layer-left {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 9px;
-}
-
-
-.layer-left label {
-
-    font-size: 13px;
-
-    cursor: pointer;
-}
-
-
-.layer-left input {
-
-    accent-color: #0ea5e9;
-
-    cursor: pointer;
-}
-
-
-.layer-status {
-
-    font-size: 9px;
-
-    color: #94a3b8;
-}
-
-
-/* =========================================================
-   OPACITY
-========================================================= */
-
-.opacity-label {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    font-size: 11px;
-
-    color: #64748b;
-
-    margin-bottom: 8px;
-}
-
-
-#opacity-slider {
-
-    width: 100%;
-
-    accent-color: #0ea5e9;
-}
-
-
-/* =========================================================
-   WEATHER
-========================================================= */
-
-.weather-loading {
-
-    font-size: 11px;
-
-    color: #94a3b8;
-}
-
-
-.weather-content {
-
-    display: none;
-}
-
-
-.weather-main {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-}
-
-
-.weather-icon {
-
-    font-size: 38px;
-}
-
-
-#weather-temperature {
-
-    font-size: 28px;
-
-    font-weight: 800;
-}
-
-
-.weather-main span {
-
-    font-size: 13px;
-
-    color: #64748b;
-}
-
-
-#weather-description {
-
-    margin-top: 2px;
-
-    color: #64748b;
-
-    font-size: 11px;
-}
-
-
-.weather-details {
-
-    display: flex;
-
-    gap: 25px;
-
-    margin-top: 15px;
-
-    padding-top: 12px;
-
-    border-top: 1px solid #edf0f3;
-
-}
-
-
-.weather-details div {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 6px;
-
-    font-size: 11px;
-
-    color: #64748b;
-}
-
-
-.weather-details i {
-
-    color: #0ea5e9;
-}
-
-
-/* =========================================================
-   TOOLS
-========================================================= */
-
-.tool-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 7px;
-}
-
-
-.tool-button {
-
-    padding: 10px 5px;
-
-    border: 1px solid #e2e8f0;
-
-    border-radius: 10px;
-
-    background: #f8fafc;
-
-    cursor: pointer;
-
-    font-size: 10px;
-
-    color: #475569;
-
-    transition: .2s;
-}
-
-
-.tool-button i {
-
+svg{
     display: block;
-
-    margin-bottom: 5px;
-
-    color: #0ea5e9;
+   margin: auto;
 }
 
-
-.tool-button:hover {
-
-    background: #eff8ff;
-
-    border-color: #bae6fd;
+#clock{
+    animation: clockHand 5s infinite linear;
+    
+    
+    transform-box: fill-box;
+    transform-origin: bottom;
 }
 
-
-/* =========================================================
-   SYSTEM
-========================================================= */
-
-.system-status {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    font-size: 11px;
-
-    color: #64748b;
+#leftTree, #righTree{
+    animation: tree 2s ease-in-out infinite alternate;
+    transform-box: fill-box;
+    transform-origin: bottom;
 }
 
-
-.status-dot {
-
-    width: 8px;
-
-    height: 8px;
-
-    border-radius: 50%;
-
-    background: #f59e0b;
+#man{
+    animation: manBody 1s ease-in-out infinite alternate;
+    transform-box: fill-box;
+    transform-origin: bottom;
 }
 
-
-.status-dot.online {
-
-    background: #22c55e;
+#pc-circle{
+    fill: #6ace66;
+    stroke-width: 4;
+    animation: change-light 4s linear infinite alternate;
 }
 
-
-.status-dot.error {
-
-    background: #ef4444;
-}
-
-
-/* =========================================================
-   MAP
-========================================================= */
-
-.map-container {
-
-    position: relative;
-
-    flex: 1;
-
-    min-width: 0;
-}
-
-
-#map {
-
+.footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-
-    height: 100%;
+    height: 35px;
+    line-height: 35px;
+    background-color: #f5f5f5;
+    font-size: 1.3rem;
 }
 
-
-/* =========================================================
-   MAP CONTROLS
-========================================================= */
-
-.map-controls {
-
-    position: absolute;
-
-    top: 18px;
-
-    right: 18px;
-
-    z-index: 500;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 5px;
-}
-
-
-.map-controls button {
-
-    width: 42px;
-
-    height: 42px;
-
-    border: none;
-
-    border-radius: 11px;
-
-    background: white;
-
-    color: #475569;
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,.15);
-
-    cursor: pointer;
-
-    transition: .2s;
-}
-
-
-.map-controls button:hover {
-
-    color: #0284c7;
-
-    transform: translateY(-1px);
-}
-
-
-/* =========================================================
-   COORDINATE
-========================================================= */
-
-.coordinate-display {
-
-    position: absolute;
-
-    bottom: 18px;
-
-    left: 18px;
-
-    z-index: 500;
-
-    padding: 8px 12px;
-
-    background: rgba(255,255,255,.93);
-
-    border-radius: 9px;
-
-    font-size: 10px;
-
-    color: #64748b;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,.1);
-}
-
-
-/* =========================================================
-   LEGEND
-========================================================= */
-
-.map-legend {
-
-    position: absolute;
-
-    right: 18px;
-
-    bottom: 18px;
-
-    z-index: 500;
-
-    min-width: 135px;
-
-    padding: 13px;
-
-    background: rgba(255,255,255,.95);
-
-    border-radius: 12px;
-
-    box-shadow:
-        0 5px 20px rgba(0,0,0,.12);
-
-    font-size: 10px;
-}
-
-
-.map-legend strong {
-
-    display: block;
-
-    margin-bottom: 8px;
-
-    font-size: 11px;
-}
-
-
-.map-legend div {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    margin: 5px 0;
-}
-
-
-.legend-line {
-
-    width: 20px;
-
-    height: 3px;
-
-    display: inline-block;
-}
-
-
-.legend-line.road {
-
-    background: #f59e0b;
-}
-
-
-.legend-line.river {
-
-    background: #0ea5e9;
-}
-
-
-.legend-point {
-
-    width: 9px;
-
-    height: 9px;
-
-    border-radius: 50%;
-
-    display: inline-block;
-}
-
-
-.legend-point.umkm {
-
-    background: #f97316;
-}
-
-
-.legend-point.wisata {
-
-    background: #22c55e;
-}
-
-
-/* =========================================================
-   POPUP
-========================================================= */
-
-.leaflet-popup-content-wrapper {
-
-    border-radius: 13px;
-}
-
-
-.popup-title {
-
-    font-weight: 800;
-
-    font-size: 14px;
-
-    margin-bottom: 5px;
-}
-
-
-.popup-type {
-
-    display: inline-block;
-
-    padding: 3px 7px;
-
-    margin-bottom: 8px;
-
-    background: #e0f2fe;
-
-    color: #0369a1;
-
-    border-radius: 6px;
-
-    font-size: 9px;
-}
-
-
-.popup-content {
-
-    font-size: 11px;
-
-    line-height: 1.6;
-
-    color: #64748b;
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 800px) {
-
-    .topbar {
-
-        height: 64px;
-
-        padding: 0 12px;
+@keyframes clockHand{
+    from{
+        transform: rotateZ(0deg);
     }
-
-
-    .brand h1 {
-
-        font-size: 13px;
+    from{
+        transform: rotateZ(-360deg);
     }
-
-
-    .brand p {
-
-        font-size: 9px;
-    }
-
-
-    .brand-icon {
-
-        width: 38px;
-
-        height: 38px;
-    }
-
-
-    .app {
-
-        height: calc(100vh - 64px);
-    }
-
-
-    .sidebar {
-
-        position: absolute;
-
-        z-index: 1000;
-
-        left: 0;
-
-        top: 64px;
-
-        bottom: 0;
-
-        width: min(330px, 88vw);
-
-        transform: translateX(-100%);
-
-        transition: .3s;
-
-        box-shadow: 10px 0 30px rgba(0,0,0,.12);
-    }
-
-
-    .sidebar.open {
-
-        transform: translateX(0);
-    }
-
-
-    .map-container {
-
-        width: 100%;
-    }
-
 }
+
+@keyframes manBody{
+    from{
+        transform: rotateX(0deg);
+    }
+    to{
+        transform: rotateX(10deg);
+    }
+}
+
+@keyframes tree{
+    from{
+        transform: rotateZ(10deg);
+    }
+    to{
+        transform: rotateZ(-20deg);
+    }
+}
+
+@keyframes change-light {
+    0% {
+        stroke: #cd61f8;
+      }
+      25% {
+        stroke: #6ace66;
+      }
+      75% {
+        stroke: #2995c0;
+      }
+      100% {
+        stroke: #e92949;
+      }
+  }
+
+  /* Media Queries */
+
+  @media (min-width: 640px){
+    .main-title h1{
+        font-size: 5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #555;
+    }
+    
+    .main-title h2{
+        font-size: 3rem;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+    
+     
+    }
+     
+    @media (min-width: 768px){
+        .main-title h1{
+            font-size: 6rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #555;
+        }
+        
+        .main-title h2{
+            font-size: 4rem;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+    
+     
+    }
+     
+    @media (min-width: 1024px){
+     
+        .main-title h1{
+            font-size: 7rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #555;
+        }
+        
+        .main-title h2{
+            font-size: 5rem;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+     
+    }
+     
+    @media (min-width: 1200px){
+     
+        .main-title h1{
+            font-size: 8rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #555;
+        }
+        
+        .main-title h2{
+            font-size: 5rem;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .main-title{
+            text-align: center;
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+     
+    }
