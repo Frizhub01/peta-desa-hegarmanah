@@ -1,0 +1,162 @@
+/* =========================================================
+   RESET & LAYOUT DASAR
+========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  color: #172033;
+  background: #f4f7fb;
+}
+
+/* TOPBAR */
+.topbar {
+  position: relative;
+  z-index: 1000;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid #e7ebf1;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.brand-icon {
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background: #0ea5e9;
+  color: white;
+  font-size: 19px;
+}
+.brand h1 {
+  font-size: 16px;
+  font-weight: 800;
+}
+.brand p {
+  margin-top: 3px;
+  color: #7a8494;
+  font-size: 11px;
+}
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+.icon-button {
+  width: 42px; /* Ukuran lebih baik untuk target sentuh */
+  height: 42px; /* Ukuran lebih baik untuk target sentuh */
+  border: 1px solid #e1e6ed;
+  background: white;
+  border-radius: 11px;
+  cursor: pointer;
+  color: #475569;
+  transition: 0.2s;
+  display: flex; /* Untuk menengahkan ikon */
+  align-items: center; /* Untuk menengahkan ikon */
+  justify-content: center; /* Untuk menengahkan ikon */
+}
+.icon-button:hover {
+  background: #f1f7fb;
+  color: #0284c7;
+}
+
+/* APP & SIDEBAR */
+.app {
+  height: calc(100vh - 74px);
+  display: flex;
+}
+.sidebar {
+  width: 350px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  background: #f8fafc;
+  border-right: 1px solid #e4e8ee;
+  padding: 15px;
+}
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  width: 5px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 800px) {
+  .topbar {
+    height: 64px;
+    padding: 0 12px;
+  }
+  .brand h1 {
+    font-size: 13px;
+  }
+  .brand p {
+    font-size: 9px;
+  }
+  .brand-icon {
+    width: 38px;
+    height: 38px;
+  }
+  .app {
+    height: calc(100vh - 64px);
+  }
+  /* Tampilkan tombol menu di mobile */
+  .menu-button {
+    display: flex;
+  }
+  .sidebar {
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 64px; /* Sesuaikan dengan tinggi topbar mobile */
+    bottom: 0;
+    width: min(330px, 88vw);
+    transform: translateX(-100%);
+    transition: 0.3s;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.12);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .map-container {
+    width: 100%;
+  }
+
+  /* Backdrop untuk sidebar di mobile */
+  .sidebar-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999; /* Di bawah sidebar, di atas peta */
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+  }
+  /* Asumsi kelas 'sidebar-open' ditambahkan ke .app container saat sidebar terbuka */
+  .app.sidebar-open .sidebar-backdrop {
+    opacity: 1;
+    visibility: visible;
+  }
+}

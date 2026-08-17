@@ -1,0 +1,296 @@
+/* =========================================================
+   MAP COMPONENTS
+========================================================= */
+
+.map-container {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================================
+   MAP CONTROLS
+========================================================= */
+
+.map-controls {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.map-controls button {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 11px;
+  background: white;
+  color: #475569;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.map-controls button:hover {
+  color: #0284c7;
+  transform: translateY(-1px);
+}
+
+/* Sesuaikan posisi kontrol peta untuk mobile */
+@media (max-width: 800px) {
+  .map-controls {
+    top: 74px; /* 64px (tinggi topbar mobile) + 10px margin */
+  }
+}
+
+/* =========================================================
+   COORDINATE & LEGEND
+========================================================= */
+
+.coordinate-display {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  z-index: 500;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.93);
+  border-radius: 9px;
+  font-size: 10px;
+  color: #64748b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.map-legend {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 500;
+  min-width: 135px;
+  padding: 13px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+  font-size: 10px;
+}
+
+.map-legend strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+
+.map-legend div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 5px 0;
+}
+
+.legend-line {
+  width: 20px;
+  height: 3px;
+  display: inline-block;
+}
+
+.legend-line.road {
+  background: #f59e0b;
+}
+
+.legend-line.river {
+  background: #0ea5e9;
+}
+
+.legend-point {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-point.umkm {
+  background: #f97316;
+}
+
+.legend-point.wisata {
+  background: #22c55e;
+}
+
+/* =========================================================
+   POPUP
+========================================================= */
+
+.leaflet-popup-content-wrapper {
+  border-radius: 13px;
+}
+
+.popup-title {
+  font-weight: 800;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.popup-type {
+  display: inline-block;
+  padding: 3px 7px;
+  margin-bottom: 8px;
+  background: #e0f2fe;
+  color: #0369a1;
+  border-radius: 6px;
+  font-size: 9px;
+}
+
+.popup-content {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+/* =========================================================
+   LEAFLET LAYER CONTROL
+========================================================= */
+
+.leaflet-control-layers {
+  border-radius: 12px !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15) !important;
+  border: none !important;
+}
+
+.leaflet-control-layers-toggle {
+  border-radius: 11px !important;
+  width: 42px !important;
+  height: 42px !important;
+}
+
+/* =========================================================
+   MEASUREMENT TOOLS
+========================================================= */
+
+#map.measurement-active {
+  cursor: crosshair;
+}
+
+#map.measurement-distance,
+#map.measurement-area {
+  cursor: crosshair;
+}
+
+/* Tombol pengukuran aktif */
+
+.map-controls .tool-button.active,
+.tool-button.active {
+  background: #eff8ff;
+  border-color: #7dd3fc;
+  color: #0284c7;
+  box-shadow: inset 0 0 0 1px rgba(2, 132, 199, 0.08);
+}
+
+/* =========================================================
+   MEASUREMENT INFORMATION
+========================================================= */
+
+.measurement-info {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  z-index: 1000;
+
+  max-width: min(420px, calc(100% - 36px));
+
+  transform: translateX(-50%);
+
+  padding: 9px 13px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 10px;
+
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.15);
+
+  color: #475569;
+
+  font-size: 11px;
+
+  line-height: 1.45;
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   MEASUREMENT SEGMENT LABEL
+========================================================= */
+
+.measurement-label-wrapper,
+.measurement-result-wrapper {
+  background: transparent;
+  border: none;
+}
+
+.measurement-label {
+  display: inline-block;
+
+  padding: 3px 6px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid #bae6fd;
+
+  border-radius: 6px;
+
+  color: #0369a1;
+
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.14);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   MEASUREMENT RESULT
+========================================================= */
+
+.measurement-result {
+  margin-top: 8px;
+
+  padding: 7px 10px;
+
+  background: #0284c7;
+
+  border: 2px solid #ffffff;
+
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.22);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+  .measurement-info {
+    bottom: 70px;
+  }
+}

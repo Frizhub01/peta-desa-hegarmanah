@@ -1,0 +1,165 @@
+{
+  "type": "FeatureCollection",
+  "name": "bangunan",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "nama": "Kantor Kepala Desa", "kategori": "Kantor Desa", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.27314308800004, -6.838459449999959] }
+    },
+    { "type": "Feature", "properties": { "nama": "PAUD Mawar", "kategori": "Sekolah", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.279375, -6.829237] } },
+    { "type": "Feature", "properties": { "nama": "SDN Hegarmanah", "kategori": "Sekolah", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.279375, -6.829237] } },
+    { "type": "Feature", "properties": { "nama": "PAUD Kenanga", "kategori": "Sekolah", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.271983, -6.825128] } },
+    { "type": "Feature", "properties": { "nama": "MI Pasir Panglay", "kategori": "Sekolah", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.27163, -6.824006] } },
+    { "type": "Feature", "properties": { "nama": "PAUD Seroja", "kategori": "Sekolah", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.272819, -6.837632] } },
+    { "type": "Feature", "properties": { "nama": "SDN Ciranjanggirang 1", "kategori": "Sekolah", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.27293, -6.83884] } },
+    { "type": "Feature", "properties": { "nama": "PAUD Khoerunisa", "kategori": "Sekolah", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.265029, -6.83659] } },
+    { "type": "Feature", "properties": { "nama": "PAUD Rahmatan Lilalamin", "kategori": "Sekolah", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.262922, -6.838168] } },
+    { "type": "Feature", "properties": { "nama": "SDN Rahayu", "kategori": "Sekolah", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.264585, -6.836549] } },
+    { "type": "Feature", "properties": { "nama": "PAUD Dahlia Gandaria", "kategori": "Sekolah", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.264447, -6.832057] } },
+    { "type": "Feature", "properties": { "nama": "SDN Sukasirna", "kategori": "Sekolah", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.265802, -6.836512] } },
+    { "type": "Feature", "properties": { "nama": "PAUD Miftahul Ulum", "kategori": "Sekolah", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.265218, -6.835312] } },
+    {
+      "type": "Feature",
+      "properties": { "nama": "SMP IT Miftahul Ulum Pusaka", "kategori": "Sekolah", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.265556, -6.836652] }
+    },
+    { "type": "Feature", "properties": { "nama": "SMA Miftahul Ulum Pusaka", "kategori": "Sekolah", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.265875, -6.836427] } },
+    { "type": "Feature", "properties": { "nama": "Posyandu Melati", "kategori": "Posyandu", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.276299, -6.835102] } },
+    { "type": "Feature", "properties": { "nama": "Posyandu Mawar", "kategori": "Posyandu", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.279572, -6.829323] } },
+    { "type": "Feature", "properties": { "nama": "Posyandu Kenanga", "kategori": "Posyandu", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.271803, -6.82527] } },
+    { "type": "Feature", "properties": { "nama": "Posyandu Ros", "kategori": "Posyandu", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.272991, -6.833267] } },
+    { "type": "Feature", "properties": { "nama": "Posyandu Seroja", "kategori": "Posyandu", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.272819, -6.837632] } },
+    { "type": "Feature", "properties": { "nama": "Posyandu Plamboyan", "kategori": "Posyandu", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.271919, -6.840698] } },
+    { "type": "Feature", "properties": { "nama": "Posyandu Hebras", "kategori": "Posyandu", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.263812, -6.840241] } },
+    { "type": "Feature", "properties": { "nama": "Posyandu Dahlia", "kategori": "Posyandu", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": { "type": "Point", "coordinates": [107.263878, -6.832242] } },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Nurul Hikmah", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.276332, -6.834666] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Nurul Huda", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.279716, -6.829889] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami At-Taufik", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.276069, -6.829968] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Al- Ikhlas", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.278939, -6.831459] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Nurul Huda", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.286221, -6.830928] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Arrodiatudin", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.285312, -6.831029] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Miftahussaadah", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.279716, -6.829889] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Al-Hidayah", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.273737, -6.823402] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Assajidin", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.271762, -6.825495] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Al-Ikhlas", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.272892, -6.82737] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Al-Ikhlas", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.27111, -6.823065] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Miftahussaadah", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.27303, -6.833256] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Al- Islah", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.272838, -6.838168] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Al-Hidayat", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.270955, -6.842373] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Al-Ikhlas", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.263808, -6.840238] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Al-Barokah", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.263226, -6.836889] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami At-Taqwa", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.262748, -6.838226] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Darul Iman", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.263694, -6.832461] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "Mesjid Jami Nurul Iman", "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.268153, -6.829841] }
+    },
+    { "type": "Feature", "properties": { "nama": null, "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": null },
+    { "type": "Feature", "properties": { "nama": null, "kategori": "Tempat Peribadatan", "jenis": null, "alamat": null, "deskripsi": null, "foto": null }, "geometry": null },
+    {
+      "type": "Feature",
+      "properties": { "nama": "LAPANG VOLI KP. PASIRRAHONG", "kategori": "Sarana Olahraga", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.271688, -6.823927] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "LAPANG VOLI KP. HEGARMANAH", "kategori": "Sarana Olahraga", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.273054, -6.839042] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "LAPANG VOLI KP. HEGARMANAH", "kategori": "Sarana Olahraga", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.27264, -6.83738] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "GOR DESA HEGARMANAH", "kategori": "Sarana Olahraga", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.273045, -6.838998] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "LAPANG VOLI KP. PASIRHAPA", "kategori": "Sarana Olahraga", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.264585, -6.836549] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nama": "LAPANG BULU TANGKIS KP. PASIRDAWUAN", "kategori": "Sarana Olahraga", "jenis": null, "alamat": null, "deskripsi": null, "foto": null },
+      "geometry": { "type": "Point", "coordinates": [107.262517, -6.837295] }
+    }
+  ]
+}
